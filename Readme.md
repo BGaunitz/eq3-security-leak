@@ -36,7 +36,7 @@ IMHO: _Wie dieses Gerät mit dieser gravierenden Sicherheitslücke Testsieger be
 
 `hcitool lescan`
 
-![HCI Tool Scan Example](/img/hcitool-scan.png)
+![HCI Tool Scan Example](/img/01-hcitool-scan.png)
 
 Gerät mit Name "CC-RT-BLE" ist der Thermostat.
 

@@ -1,4 +1,4 @@
-# Sicherheitslücke in Thermostat eQ-3 Eqiva BLE
+# Sicherheitslücke in Thermostat eQ-3 Eqiva Bluetooth
 
 Bei dem [eQ-3 Eqiva](http://www.eq-3.de/produkte/eqiva/bluetooth-smart-heizkoerperthermostat.html) handelt es sich um einen smarten Heizungsthermostat mit einer integrierten Bluetooth LE Schnittstelle. Der Hersteller empfiehlt folgende App zum Steuern des Thermostates per Smartphone: [Calor BT](https://play.google.com/store/apps/details?id=de.eq3.ble.android&hl=de).
 

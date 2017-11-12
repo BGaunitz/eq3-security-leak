@@ -1,4 +1,4 @@
-# Security leak in smart home thermostat eQ-3 Eqiva BLE
+# Security leak in smart home thermostat eQ-3 Eqiva Bluetooth
 
 [Beschreibung in Deutsch](Readme.md)
 

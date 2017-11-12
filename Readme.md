@@ -2,15 +2,15 @@
 
 Bei dem [eQ-3 Eqiva](http://www.eq-3.de/produkte/eqiva/bluetooth-smart-heizkoerperthermostat.html) handelt es sich um einen smarten Heizungsthermostat mit einer integrierten Bluetooth LE Schnittstelle. Der Hersteller empfiehlt folgende App zum Steuern des Thermostates per Smartphone: [Calor BT](https://play.google.com/store/apps/details?id=de.eq3.ble.android&hl=de).
 
-Verbindet man sich per App mit dem Heizungsthermostat wird ein vierstelliger PIN Code abgefragt der am Thermostat abgelesen werden muss. Ein Sicherheitsfeature damit sich nur jemand den Thermostat steuern kann, der auch physischen Zugang zu ihm hat, z.B. in der eigenen Wohnung.
+Verbindet man sich per App mit dem Heizungsthermostat wird ein vierstelliger PIN Code abgefragt, der am Thermostat abgelesen werden muss. Ein Sicherheitsfeature, damit nur jemand den Thermostat steuern kann, der auch physischen Zugang zu ihm hat, z.B. in der eigenen Wohnung.
 
-Interessanterweise spielt dieser PIN Code jedoch keine Rolle, wenn man direkt BLE Befehle mit entsprechenden Werkzeugen an den Thermostaten sendet (siehe unten). **Dies bedeutet, dass jeder Thermostat in Reichweite (ca. 40m bei Bluetooth LE [1])- fern- und damit fremdgesteuert werden kann.**
+Interessanterweise spielt dieser PIN Code jedoch keine Rolle, wenn man direkt BLE Befehle mit entsprechenden Werkzeugen - ein Smartphone ist ausreichend - an den Thermostaten sendet (siehe unten). **Dies bedeutet, dass jeder Thermostat in Reichweite (ca. 40m bei Bluetooth LE [1]) mit einfachsten Mitteln fern- und damit fremdgesteuert werden kann.**
 
 Angriffsmotive reichen von dem einfachen Verstellen der Einstellungen bis hin zu Erpressungsszenarien wie dem Abstellen der Heizung bis ein entsprechender Geldbetrag gezahlt wurde.
 
 **Im Moment kann nur dazu geraten werden die Bluetoothfunktion im Thermostat zu deaktivieren.**
 
-PS: _Wie dieses Gerät Testsieger bei Stiftung Warentest werden konnte ist mir ein Rätsel._
+IMHO: _Wie dieses Gerät mit dieser gravierenden Sicherheitslücke Testsieger bei Stiftung Warentest werden konnte ist mir ein Rätsel._
 
 ## Android
 

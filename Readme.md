@@ -1,6 +1,6 @@
 # Security leak in smart home thermostat eQ-3 Eqiva Bluetooth
 
-[Beschreibung in Deutsch](Readme.md)
+[Beschreibung in Deutsch](Readme_ger.md)
 
 The [eQ-3 Eqiva](http://www.eq-3.de/produkte/eqiva/bluetooth-smart-heizkoerperthermostat.html) is a smart home thermostat for radiators with an integrated Bluetooth LE interface. The manufacture recommends the following app to control the thermostat using a smartphone: [Calor BT](https://play.google.com/store/apps/details?id=de.eq3.ble.android&hl=de).
 
